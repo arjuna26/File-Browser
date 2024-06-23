@@ -1,11 +1,11 @@
-import time
-from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-import subprocess
+from watchdog.observers import Observer
 from config import NGROK_COMMAND
+import subprocess
+import time
 
 class Handler(FileSystemEventHandler):
-    def on_modified(self):
+    def on_modified(self, event):
         print('Change detected, restarting python server and ngrok tunnel...')
         
         # execute command to run 'run-server.py' script
