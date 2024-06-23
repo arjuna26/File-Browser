@@ -2,6 +2,7 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import subprocess
+from config import NGROK_COMMAND
 
 class Handler(FileSystemEventHandler):
     def on_modified(self):
@@ -14,10 +15,7 @@ class Handler(FileSystemEventHandler):
         # ngrok_path = 'C:/Users/arjun/OneDrive/Desktop/CS Projects/FileBrowser/ngrok.exe'
         
         # construct ngrok command -- !!may need to replace "ngrok" with ngrok_path!!
-        ngrok_command = [
-            "ngrok", "http", "--scheme=https", "https://localhost:5000", 
-            "--domain=mighty-outgoing-weasel.ngrok-free.app"
-        ]
+        ngrok_command = NGROK_COMMAND
         
         # execute command to restart ngrok tunnel
         ngrok_process = subprocess.Popen(ngrok_command, shell=True)

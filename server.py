@@ -1,9 +1,10 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
+from config import USERNAME, PASSWORD
 import base64
 import ssl
 
-USERNAME = 'admin'
-PASSWORD = 'admin'
+username = USERNAME
+password = PASSWORD
 
 # Create a subclass of SimpleHTTPRequestHandler to handle authentication/HTTP requests
 class AuthHandler(SimpleHTTPRequestHandler):
@@ -41,7 +42,7 @@ class AuthHandler(SimpleHTTPRequestHandler):
         # split the credentials into username and password
         user, passwd = credentials.split(':')
         # check if provided username and password match the expected ones
-        return user == USERNAME and passwd == PASSWORD
+        return user == username and passwd == password
         
 if __name__ == '__main__':
     port = 5000  
