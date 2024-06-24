@@ -10,7 +10,7 @@ To use Ngrok, you need to sign up for an account on the Ngrok website. Follow th
 
 1. Go to [Ngrok](https://ngrok.com/) and sign up for an account.
 2. After signing up, log in to your Ngrok account.
-3. Once logged in, you can create a permanent domain by going to the [Domains](https://dashboard.ngrok.com/domains) section of your Ngrok dashboard. Follow the instructions to set up your free domain.
+3. Once logged in, you can create a permanent domain by going to the [Domains](https://dashboard.ngrok.com/cloud-edge/domains) section of your Ngrok dashboard. Follow the instructions to set up your free domain.
 
 ## Credentials
 
