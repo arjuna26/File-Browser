@@ -1,7 +1,17 @@
+'''
+SUMMARY TO GO IN README:
+## Summary
+* Used Python's basic SSL/authentication to set up an HTTP server
+* Initialized a React project with TypeScript to serve static files on Python HTTP server.
+* Exposed local server to the internet using ngrok for access from any device.
+'''
+
+
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from config import USERNAME, PASSWORD
 import base64
 import ssl
+import os
 
 username = USERNAME
 password = PASSWORD
@@ -54,6 +64,8 @@ if __name__ == '__main__':
     context.load_cert_chain(certfile='.certificate.pem', keyfile='.key.pem') 
     
     httpd.socket = context.wrap_socket(httpd.socket, server_side=True) 
+    
+    os.chdir('vite-react/dist')
     
     try:
         print(f'Server live on port {port}')
