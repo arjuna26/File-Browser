@@ -1,3 +1,4 @@
+.gitignore
 .certificate.pem
 .key.pem
 ngrok.exe
