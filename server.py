@@ -65,8 +65,6 @@ if __name__ == '__main__':
     
     httpd.socket = context.wrap_socket(httpd.socket, server_side=True) 
     
-    os.chdir('vite-react/dist')
-    
     try:
         print(f'Server live on port {port}')
         httpd.serve_forever() 
